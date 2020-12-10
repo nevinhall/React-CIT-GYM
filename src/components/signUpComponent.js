@@ -10,13 +10,15 @@ const SignUpComponent = () => {
 
         const formData = new FormData(e.target),
             newUser = Object.fromEntries(formData.entries())
-        console.log(newUser)
+        console.log(  newUser )
 
 
         var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
         if (existingEntries == null) existingEntries = [];
 
-        existingEntries.push( newUser );
+
+
+        existingEntries.push(  newUser );
         console.log(existingEntries);
         localStorage.setItem("allEntries", JSON.stringify(existingEntries));
     }

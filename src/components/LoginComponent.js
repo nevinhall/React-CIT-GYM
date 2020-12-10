@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Col, Row, Button, Container, Form } from 'react-bootstrap';
-import  { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 
@@ -13,23 +13,26 @@ const LoginComponent = () => {
 
     const formData = new FormData(e.target),
       logInUser = Object.fromEntries(formData.entries())
-
+      
     var currentUsers = JSON.parse(localStorage.getItem("allEntries"));
     var userExists = currentUsers.find(x => x.email == logInUser.email)
 
-    if (userExists.password == logInUser.password) {
-      console.log("logged in");
-      userExists.isLoggedIn = true
+    if (userExists.email != null) {
+  
+      if (userExists.password == logInUser.password) {
+  
+        userExists.isLoggedIn = true
 
-      currentUsers.push(userExists);
-      localStorage.setItem("userLogedIn", JSON.stringify(userExists));
-      var userLogedIn = JSON.parse(localStorage.getItem("userLogedIn"));
-      // console.log(userLogedIn);
+        currentUsers.push(userExists);
+        localStorage.setItem("userLogedIn", JSON.stringify(userExists));
+        // var userLogedIn = JSON.parse(localStorage.getItem("userLogedIn"));
+        // // console.log(userLogedIn);
 
-      let path = '/Class';
-      history.push(path);
+        let path = '/currentclasses';
+        history.push(path);
 
 
+      }
     }
 
 

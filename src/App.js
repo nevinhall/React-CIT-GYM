@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { Switch, Route } from 'react-router-dom';
 
+import CurrentClasses from './pages/Currentclasses';
 import Login from './pages/Login'
 import SignUp from './pages/signUp';
 
@@ -15,6 +16,7 @@ function App() {
     <Switch> {/* The Switch decides which component to show based on the current URL.*/} 
       <Route exact path='/login' component={Login}></Route>
       <Route exact path='/signup' component={SignUp}></Route>
+      <Route exact path='/currentclasses' component={CurrentClasses}></Route>
     </Switch>
   );
 }
