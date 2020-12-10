@@ -1,14 +1,22 @@
 
 export const increment = () => {
-  return{
+  return {
     type: 'INCREMENT'
   }
 }
 
-// //Action
-// const decrement = () => {
-//   return{
-//     type: 'DECREMENT'
-//   }
-// }
+export const signUp = (user) => {
+  return {
+    type: 'SIGN_UP',
+    payload: { user }
+  }
+}
+
+
+export const signIn = (user) => {
+  return {
+    type: 'SIGN_IN',
+    payload: user
+  }
+}
 
