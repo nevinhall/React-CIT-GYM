@@ -1,17 +1,18 @@
 import React, { Component, useState, useEffect } from 'react';
 
-import ClassCard from '../components/ClassCard'
+import FacilityCard from '../components/FacilityCard'
 
 
 
-const CurrentClasses = () => {
+const Trainer = () => {
 
+   
     const [filter, setFilter] = useState("")
     const [data, setData] = useState([])
 
 
     useEffect(() => {
-        var currentClasses = JSON.parse(localStorage.getItem("classes"));
+        var currentClasses = JSON.parse(localStorage.getItem("faclities"));
         if (currentClasses == null) currentClasses = [
             {
                 clubName: "Rowing Club",
@@ -63,9 +64,8 @@ const CurrentClasses = () => {
             }
         ];
         setData(currentClasses)
-        console.log("t" + currentClasses);
 
-        return localStorage.setItem("classes", JSON.stringify(currentClasses));
+        return localStorage.setItem("faclities", JSON.stringify(currentClasses));
 
     }, [])
 
@@ -85,10 +85,11 @@ const CurrentClasses = () => {
 
     return (
         <div>
+            <p>Test</p>
             <input value={filter} onChange={handleChange} />
 
             {filteredData.map(item => (
-                  <ClassCard item={item}/>
+                  <FacilityCard item={item}/>
             ))}
         </div>
     );
@@ -97,10 +98,7 @@ const CurrentClasses = () => {
 
 
 
-
-
-
-export default CurrentClasses;
+export default Trainer;
 
 
 

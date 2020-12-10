@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom'
 import { Image, Col, Row, Button, Container, Form, Table } from 'react-bootstrap';
+import  { Redirect, useHistory } from 'react-router-dom'
 
 
 
 const SignUpComponent = () => {
     const history = useHistory();
+
+
+
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -17,32 +22,33 @@ const SignUpComponent = () => {
 
         var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
         if (existingEntries == null) existingEntries = [];
-        var userLogedIn = JSON.parse(localStorage.getItem("userLogedIn"));
-        if (userLogedIn == null) userLogedIn = [];
 
 
-        var updatedUser = existingEntries.filter(item => item.fname !==  newUser.fname ) 
-        updatedUser.push(newUser)
-
-        console.log(updatedUser);
+      
+    
 
 
-        localStorage.setItem("classes", JSON.stringify(updatedUser));
+        //                   existingEntries                        
+        var updatedUsers =  existingEntries.filter(item => item.fname !== newUser.fname)
+              
+        updatedUsers.push(newUser)
+       
 
-
-
-
-
-
-        ////////////////////////////////////////
-        existingEntries.push(newUser);
         console.log(existingEntries);
-        localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+        localStorage.setItem("allEntries", JSON.stringify(updatedUsers));
 
-        let path = '/currentclasses';
+
+
+        let path = '/login';
         history.push(path);
-
     }
+
+
+    const onClikcHanler = () => {
+        let path = '/login';
+        history.push(path);
+    }
+
 
 
     return (
@@ -137,6 +143,8 @@ const SignUpComponent = () => {
                     </Col>
                 </Row>
             </Container>
+
+            <Button onClick={onClikcHanler}> Already Have an account ?</Button>
 
         </div>
     );

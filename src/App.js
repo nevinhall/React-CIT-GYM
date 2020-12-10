@@ -7,12 +7,12 @@ import SignUp from './pages/signUp';
 import Class from './pages/Class'
 import MyClasses from './pages/MyClasses'
 import MyProfile from './pages/MyProfile';
+import Trainer from './pages/Trainer';
 
 
 
 
 function App() {
-
 
   // localStorage.clear();
   localStorage.setItem("users", JSON.stringify());
@@ -25,6 +25,7 @@ function App() {
       <Route exact path='/Class' component={Class}></Route>
       <Route exact path='/myClasses' component={MyClasses}></Route>
       <Route exact path='/myProfile' component={MyProfile}></Route>
+      <Route exact path='/trainer' component={Trainer}></Route>
     </Switch>
   );
 }

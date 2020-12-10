@@ -18,20 +18,12 @@ const MyClasses = () => {
 
     }, [])
 
-    const filteredData = data.filter(item => item.members.find(x => x == "Nevin"));
-    var userLogedIn = JSON.parse(localStorage.getItem("userLogedIn"));
-
 
     const cancelBooking = () => {
+        // var userLogedIn = JSON.parse(localStorage.getItem("userLogedIn"));
 
-        console.log(filteredData[0].members);
-        var cancelClass = filteredData
-        cancelClass = cancelClass[0].members.filter(item => item !== userLogedIn.fname)
-      
-    
-        console.log( "r" + cancelClass[0]);
-
-        console.log(userLogedIn);
+        // var filteredData = data.filter(item => item.members.find(x => x = "Nevin"));
+        // // bookClass.members.push(userLogedIn.fname)
 
         // var updatedClasses = currentClasses.filter(item => item !== bookClass)
         // updatedClasses.push(bookClass)
@@ -48,7 +40,7 @@ const MyClasses = () => {
 
     }
 
-
+    const filteredData = data.filter(item => item.members.find(x => x == "Nevin"));
 
     return (
         <div>
@@ -69,7 +61,7 @@ const MyClasses = () => {
                             <Card.Text>
                                 Duration: {item.durationOfClass}
                             </Card.Text>
-                            <Button onClick={cancelBooking} variant="primary">Cancel Booking</Button>
+                            <Button onClick={() => cancelBooking} variant="primary">Cancel Booking</Button>
 
                         </Card.Body>
                     </Card>
