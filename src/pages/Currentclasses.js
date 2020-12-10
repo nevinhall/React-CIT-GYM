@@ -1,5 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 
+import ClassCard from '../components/ClassCard'
+
 
 
 const CurrentClasses = () => {
@@ -20,7 +22,8 @@ const CurrentClasses = () => {
                 img: "",
                 maxSize: "5",
                 durationOfClass: "60mins",
-                location: "Lake Blue"
+                location: "Lake Blue",
+                members: []
             },
             {
                 clubName: "Arobics",
@@ -31,7 +34,8 @@ const CurrentClasses = () => {
                 img: "",
                 maxSize: "15",
                 durationOfClass: "30mins",
-                location: "Hall B"
+                location: "Hall B",
+                members: []
             },
             {
                 clubName: "Spinning",
@@ -42,7 +46,8 @@ const CurrentClasses = () => {
                 img: "",
                 maxSize: "5",
                 durationOfClass: "45mins",
-                location: "Hall A"
+                location: "Hall A",
+                members: []
             },
             {
                 clubName: "Yoga",
@@ -53,7 +58,8 @@ const CurrentClasses = () => {
                 img: "",
                 maxSize: "20",
                 durationOfClass: "45mins",
-                location: "yogaPad"
+                location: "yogaPad",
+                members: []
             }
         ];
         setData(currentClasses)
@@ -85,9 +91,7 @@ const CurrentClasses = () => {
             <input value={filter} onChange={handleChange} />
 
             {filteredData.map(item => (
-                //   <ClassCard item={item}/>
-                item.clubName
-
+                  <ClassCard item={item}/>
             ))}
         </div>
     );

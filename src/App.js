@@ -4,12 +4,13 @@ import { Switch, Route } from 'react-router-dom';
 import CurrentClasses from './pages/Currentclasses';
 import Login from './pages/Login'
 import SignUp from './pages/signUp';
+import Class from './pages/Class'
 
 
 function App() {
 
 
- 
+  // localStorage.clear();
   localStorage.setItem("users", JSON.stringify());
   
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route exact path='/login' component={Login}></Route>
       <Route exact path='/signup' component={SignUp}></Route>
       <Route exact path='/currentclasses' component={CurrentClasses}></Route>
+      <Route exact path='/Class' component={Class}></Route>
     </Switch>
   );
 }
