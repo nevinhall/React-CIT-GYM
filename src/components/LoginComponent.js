@@ -25,8 +25,9 @@ const LoginComponent = () => {
 
         currentUsers.push(userExists);
         localStorage.setItem("userLogedIn", JSON.stringify(userExists));
+        var userLogedIn = JSON.parse(localStorage.getItem("userLogedIn"));
      
-        // // console.log(userLogedIn);
+        console.log(userLogedIn);
 
         let path = '/currentclasses';
         history.push(path);

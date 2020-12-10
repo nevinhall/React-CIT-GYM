@@ -5,6 +5,10 @@ import CurrentClasses from './pages/Currentclasses';
 import Login from './pages/Login'
 import SignUp from './pages/signUp';
 import Class from './pages/Class'
+import MyClasses from './pages/MyClasses'
+import MyProfile from './pages/MyProfile';
+
+
 
 
 function App() {
@@ -19,6 +23,8 @@ function App() {
       <Route exact path='/signup' component={SignUp}></Route>
       <Route exact path='/currentclasses' component={CurrentClasses}></Route>
       <Route exact path='/Class' component={Class}></Route>
+      <Route exact path='/myClasses' component={MyClasses}></Route>
+      <Route exact path='/myProfile' component={MyProfile}></Route>
     </Switch>
   );
 }

@@ -1,31 +1,48 @@
 import React, { useState } from 'react';
+import { Redirect, useHistory } from 'react-router-dom'
 import { Image, Col, Row, Button, Container, Form, Table } from 'react-bootstrap';
 
 
 
 const SignUpComponent = () => {
-   
+    const history = useHistory();
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
         const formData = new FormData(e.target),
             newUser = Object.fromEntries(formData.entries())
-        console.log(  newUser )
+        console.log(newUser)
 
 
         var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
         if (existingEntries == null) existingEntries = [];
+        var userLogedIn = JSON.parse(localStorage.getItem("userLogedIn"));
+        if (userLogedIn == null) userLogedIn = [];
+
+
+        var updatedUser = existingEntries.filter(item => item.fname !==  newUser.fname ) 
+        updatedUser.push(newUser)
+
+        console.log(updatedUser);
+
+
+        localStorage.setItem("classes", JSON.stringify(updatedUser));
 
 
 
-        existingEntries.push(  newUser );
+
+
+
+        ////////////////////////////////////////
+        existingEntries.push(newUser);
         console.log(existingEntries);
         localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+
+        let path = '/currentclasses';
+        history.push(path);
+
     }
-
-
-
-
 
 
     return (
@@ -89,7 +106,7 @@ const SignUpComponent = () => {
 
                             <Form.Group controlId="formBasicAge">
                                 <Form.Label>Age</Form.Label>
-                                <Form.Control type="number" placeholder="Enter your Age" name="age"  />
+                                <Form.Control type="number" placeholder="Enter your Age" name="age" />
                             </Form.Group>
 
                             <Form.Group controlId="formBasicHeight">
@@ -99,17 +116,17 @@ const SignUpComponent = () => {
 
                             <Form.Group controlId="formBasicWeight">
                                 <Form.Label>Weight</Form.Label>
-                                <Form.Control type="number" placeholder="Enter your weight" name="weight"  />
+                                <Form.Control type="number" placeholder="Enter your weight" name="weight" />
                             </Form.Group>
 
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" name="email"/>
+                                <Form.Control type="email" placeholder="Enter email" name="email" />
                             </Form.Group>
 
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" name="password"  />
+                                <Form.Control type="password" placeholder="Password" name="password" />
                             </Form.Group>
 
 
