@@ -8,10 +8,6 @@ const SignUpComponent = () => {
     const history = useHistory();
 
 
-
-
-
-
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -23,12 +19,7 @@ const SignUpComponent = () => {
         var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
         if (existingEntries == null) existingEntries = [];
 
-
-      
-    
-
-
-        //                   existingEntries                        
+                     
         var updatedUsers =  existingEntries.filter(item => item.fname !== newUser.fname)
               
         updatedUsers.push(newUser)

@@ -1,16 +1,21 @@
 import React from 'react';
-import { Image, Col, Row, Button, Container, Form, Jumbotron  } from 'react-bootstrap';
+import { Image, Col, Row, Button, Container, Form, Jumbotron } from 'react-bootstrap';
 
 
 import SignUpComponent from '../components/signUpComponent'
+import MyClasses from './MyClasses';
 
 
 
 const MyProfile = () => {
-  
+
   return (
-    <div>
-        <Jumbotron fluid>
+
+    < div >
+
+    < MyClasses />
+
+      <Jumbotron fluid>
         <Container>
           <h1>Edit user Profile</h1>
           <p>
@@ -18,8 +23,8 @@ const MyProfile = () => {
           </p>
         </Container>
       </Jumbotron>
-        <SignUpComponent />
-    </div>
+      <SignUpComponent />
+    </div >
   );
 }
 

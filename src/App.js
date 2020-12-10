@@ -9,9 +9,6 @@ import MyClasses from './pages/MyClasses'
 import MyProfile from './pages/MyProfile';
 import Trainer from './pages/Trainer';
 
-
-
-
 function App() {
 
   // localStorage.clear();

@@ -6,29 +6,46 @@ import Trainer from "../pages/Trainer"
 
 
 const FacilityCard = (props) => {
+    const history = useHistory();
 
     const [show, setshow] = useState(false)
 
 
     const onClikcHanler = (props) => {
 
-        const rooms = JSON.parse(localStorage.getItem("rooms") || "[]");
-        console.log(props.item.roomName);
+        const rooms = JSON.parse(localStorage.getItem("faclities") || "[]");
+        console.log("1", rooms);
         const res = rooms.find(x => x.roomName == props.item.roomName)
-        console.log(res);
+        console.log("1", res);
         res.booked = "1"
 
-        localStorage.setItem("rooms", JSON.stringify(rooms));
+        var updatedFaclities = rooms.filter(item => item.roomName !== props.item.roomName)
+
+
+        updatedFaclities.push(res)
+
+        console.log("updated"+ updatedFaclities);
+
+
+        localStorage.setItem("faclities", JSON.stringify( updatedFaclities));
+       
+        window.location.reload();
+
+
+        // localStorage.setItem("rooms", JSON.stringify(rooms));
 
         console.log(rooms);
         setshow(true)
+        console.log(props.item)
 
     }
 
     return (
+
         <div>
-            <p>Test</p>
+
             <Card style={{ width: '18rem' }}>
+
                 <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
                     <Card.Title>{props.item.roomName}</Card.Title>
@@ -42,7 +59,7 @@ const FacilityCard = (props) => {
                 </Card.Body>
             </Card>
 
-            {show ? <Trainer /> : null}
+
         </div>
 
 

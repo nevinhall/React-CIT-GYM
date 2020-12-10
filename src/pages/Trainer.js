@@ -12,60 +12,47 @@ const Trainer = () => {
 
 
     useEffect(() => {
-        var currentClasses = JSON.parse(localStorage.getItem("faclities"));
-        if (currentClasses == null) currentClasses = [
+        var currentFacilites = JSON.parse(localStorage.getItem("faclities"));
+        if (currentFacilites == null) currentFacilites = [
             {
-                clubName: "Rowing Club",
-                trainer: "John Doe",
-                typeOfActivity: "physical",
-                numCalories: "504",
-                operatingDate: "01/11/2020",
-                img: "",
-                maxSize: "5",
-                durationOfClass: "60mins",
-                location: "Lake Blue",
-                members: []
+                "roomName": "Lake Blue",
+                "trainer": "John Doe",
+                "booked": "0"
+        
             },
             {
-                clubName: "Arobics",
-                trainer: "Jake white",
-                typeOfActivity: "spiritual",
-                numCalories: "200",
-                operatingDate: "21/11/2020",
-                img: "",
-                maxSize: "15",
-                durationOfClass: "30mins",
-                location: "Hall B",
-                members: []
+                "roomName": "Hall B",
+                "trainer": "Jake white",
+                "booked": "0"
+        
             },
+        
             {
-                clubName: "Spinning",
-                trainer: "John Doe",
-                typeOfActivity: "physical",
-                numCalories: "1000",
-                operatingDate: "18/11/2020",
-                img: "",
-                maxSize: "5",
-                durationOfClass: "45mins",
-                location: "Hall A",
-                members: []
+                "roomName": "Hall A",
+                "trainer": "John Doe",
+                "booked": "0"
+        
             },
+        
             {
-                clubName: "Yoga",
-                trainer: "Amer Blue",
-                typeOfActivity: "spiritual",
-                numCalories: "700",
-                operatingDate: "06/11/2020",
-                img: "",
-                maxSize: "20",
-                durationOfClass: "45mins",
-                location: "yogaPad",
-                members: []
+                "roomName": "yogaPad",
+                "trainer": "Amer Blue",
+                "booked": "0"
+        
+        
+            },
+        
+            {
+                "roomName": "Hall c",
+                "booked": "0"
+        
             }
-        ];
-        setData(currentClasses)
+        
+        
+        ]
+        setData(currentFacilites)
 
-        return localStorage.setItem("faclities", JSON.stringify(currentClasses));
+        return localStorage.setItem("faclities", JSON.stringify(currentFacilites));
 
     }, [])
 
@@ -85,7 +72,7 @@ const Trainer = () => {
 
     return (
         <div>
-            <p>Test</p>
+        
             <input value={filter} onChange={handleChange} />
 
             {filteredData.map(item => (
