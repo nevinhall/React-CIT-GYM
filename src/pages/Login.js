@@ -7,15 +7,17 @@ import LoginComponent from '../components/LoginComponent'
 
 
 import NavBar from '../components/NavBar'
-<NavBar />
+
 
 
 const Login = () => {
-  
-  return (
 
-    <div> 
+  return (
+    <div>
+      <NavBar />
+      <div className="d-flex justify-content-center p-5">
         <LoginComponent />
+      </div>
     </div>
   );
 }

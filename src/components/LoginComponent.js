@@ -2,12 +2,6 @@ import React from 'react';
 import { Image, Col, Row, Button, Container, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom'
 
-import NavBar from '../components/NavBar'
-
-
-
-
-
 const LoginComponent = () => {
 
   const history = useHistory();
@@ -49,7 +43,7 @@ const LoginComponent = () => {
 
   return (
     <div className="bgImg">
-      <NavBar />
+    
       <Form className="login-Form" onSubmit={handleLogin}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
