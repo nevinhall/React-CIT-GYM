@@ -1,12 +1,13 @@
 import React, { Component, useState, useEffect } from 'react';
 
+import NavBar from '../components/NavBar'
 import FacilityCard from '../components/FacilityCard'
-
+import '../css/index.css';
 
 
 const Trainer = () => {
 
-   
+
     const [filter, setFilter] = useState("")
     const [data, setData] = useState([])
 
@@ -18,37 +19,37 @@ const Trainer = () => {
                 "roomName": "Lake Blue",
                 "trainer": "John Doe",
                 "booked": "0"
-        
+
             },
             {
                 "roomName": "Hall B",
                 "trainer": "Jake white",
                 "booked": "0"
-        
+
             },
-        
+
             {
                 "roomName": "Hall A",
                 "trainer": "John Doe",
                 "booked": "0"
-        
+
             },
-        
+
             {
                 "roomName": "yogaPad",
                 "trainer": "Amer Blue",
                 "booked": "0"
-        
-        
+
+
             },
-        
+
             {
                 "roomName": "Hall c",
                 "booked": "0"
-        
+
             }
-        
-        
+
+
         ]
         setData(currentFacilites)
 
@@ -72,11 +73,11 @@ const Trainer = () => {
 
     return (
         <div>
-        
+            <NavBar />
             <input value={filter} onChange={handleChange} />
 
             {filteredData.map(item => (
-                  <FacilityCard item={item}/>
+                <FacilityCard item={item} />
             ))}
         </div>
     );

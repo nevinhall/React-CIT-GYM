@@ -2,6 +2,9 @@ import React, { Component, useState, useEffect } from 'react';
 import { Button, Card } from 'react-bootstrap';
 
 import ClassCard from '../components/ClassCard'
+import '../css/index.css';
+
+import NavBar from '../components/NavBar'
 
 
 
@@ -45,7 +48,7 @@ const MyClasses = () => {
     return (
         <div>
 
-
+          
             {filteredData.map(item => (
                 //   <ClassCard item={item}/>
 

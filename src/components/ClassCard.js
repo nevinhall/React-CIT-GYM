@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import  { Redirect, useHistory } from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap';
-;
+
+import NavBar from '../components/NavBar'
+<NavBar />
+
 
 
 const ClassCard = (props) => {

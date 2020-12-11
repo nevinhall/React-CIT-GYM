@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap';
 import Trainer from "../pages/Trainer"
+import NavBar from '../components/NavBar'
+
+
 
 
 
@@ -43,7 +46,7 @@ const FacilityCard = (props) => {
     return (
 
         <div>
-
+            <NavBar />
             <Card style={{ width: '18rem' }}>
 
                 <Card.Img variant="top" src="holder.js/100px180" />

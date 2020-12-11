@@ -1,6 +1,10 @@
 import React, { Component, useState, useEffect } from 'react';
 
 import ClassCard from '../components/ClassCard'
+import '../css/index.css';
+
+import NavBar from '../components/NavBar'
+
 
 
 
@@ -85,6 +89,7 @@ const CurrentClasses = () => {
 
     return (
         <div>
+            <NavBar />
             <input value={filter} onChange={handleChange} />
 
             {filteredData.map(item => (

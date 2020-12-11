@@ -8,6 +8,8 @@ import {createStore} from 'redux'
 import allReducer from "./reducers"
 import {Provider} from 'react-redux'
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 
 

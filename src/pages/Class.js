@@ -1,7 +1,11 @@
 import React from 'react';
 import  {  useHistory } from 'react-router-dom'
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/index.css';
 import { Card, Button } from 'react-bootstrap';
+
+import NavBar from '../components/NavBar'
+
 
 
 const Class = (props) => {
@@ -36,6 +40,7 @@ const Class = (props) => {
 
     return (
         <div className="App">
+            <NavBar />
             {console.log(props.history)}
 
             <p>{props.location.state.item.clubName}</p>
