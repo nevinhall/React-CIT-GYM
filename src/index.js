@@ -11,11 +11,6 @@ import {Provider} from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-
-
-
-
-
 let store = createStore(allReducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 //Display

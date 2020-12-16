@@ -10,6 +10,8 @@ import Class from './pages/Class'
 import MyClasses from './pages/MyClasses'
 import MyProfile from './pages/MyProfile';
 import Trainer from './pages/Trainer';
+import Home from './pages/Home';
+import CurrentTrainers from './pages/CurrentTrainers';
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
   
   return (
     <Switch> {/* The Switch decides which component to show based on the current URL.*/} 
+    <Route exact path='/' component={Home}></Route>
       <Route exact path='/login' component={Login}></Route>
       <Route exact path='/signup' component={SignUp}></Route>
       <Route exact path='/currentclasses' component={CurrentClasses}></Route>
@@ -25,6 +28,7 @@ function App() {
       <Route exact path='/myClasses' component={MyClasses}></Route>
       <Route exact path='/myProfile' component={MyProfile}></Route>
       <Route exact path='/trainer' component={Trainer}></Route>
+      <Route exact path='/currenttrainers' component={CurrentTrainers}></Route>
     </Switch>
   );
 }

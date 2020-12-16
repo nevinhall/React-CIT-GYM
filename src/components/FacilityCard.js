@@ -46,7 +46,7 @@ const FacilityCard = (props) => {
     return (
 
         <div>
-            <NavBar />
+       
             <Card style={{ width: '18rem' }}>
 
                 <Card.Img variant="top" src="holder.js/100px180" />

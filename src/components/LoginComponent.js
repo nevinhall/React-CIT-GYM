@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, Col, Row, Button, Container, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom'
 
 const LoginComponent = () => {
+  const [attempt,setAttempt] = useState(0)
 
   const history = useHistory();
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    setAttempt(attempt + 1)
+    if(attempt == 3){
+      setAttempt(0)
+      let path = '/';
+      history.push(path);
+    }
 
     const formData = new FormData(e.target),
       logInUser = Object.fromEntries(formData.entries())
@@ -27,16 +35,14 @@ const LoginComponent = () => {
      
         console.log(userLogedIn);
 
+
+        setAttempt(0)
         let path = '/currentclasses';
         history.push(path);
 
 
       }
     }
-
-
-
-
 
 
   }

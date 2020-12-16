@@ -8,16 +8,18 @@ import NavBar from '../components/NavBar'
 
 
 
-const MyClasses = () => {
+const MyTrainers = () => {
 
     const [data, setData] = useState([])
 
 
     useEffect(() => {
-        var currentClasses = JSON.parse(localStorage.getItem("classes"));
-        setData(currentClasses)
+        var currentTrainers = JSON.parse(localStorage.getItem("trainers"));
+        setData(currentTrainers)
 
-        return localStorage.setItem("classes", JSON.stringify(currentClasses));
+        console.log(currentTrainers);
+
+        return localStorage.setItem("trainers", JSON.stringify(currentTrainers));
 
     }, [])
 
@@ -46,8 +48,8 @@ const MyClasses = () => {
     const filteredData = data.filter(item => item.members.find(x => x == "Nevin"));
 
     return (
-        <div className="d-flex justify-content-around p-5">
-            <h1 className="font-weight-bold p-5" >Upcoming Classes</h1>
+        <div className="d-flex justify-content-around  p-5">
+            <h1 className="font-weight-bold p-5" >Booked Trainers</h1>
             
             {filteredData.map(item => (
 
@@ -56,13 +58,10 @@ const MyClasses = () => {
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="holder.js/100px180" />
                         <Card.Body>
-                            <Card.Title>{item.clubName}</Card.Title>
+                            <Card.Title>Appointment with:{item.trainer}</Card.Title>
                             <Card.Text>
-                                {item.clubName} is ran by {item.trainer}
-                    the next class is scheduled for {item.operatingDate}
-                            </Card.Text>
-                            <Card.Text>
-                                Duration: {item.durationOfClass}
+                                A Scheduled appointment has been booked with {item.trainer} 
+                    
                             </Card.Text>
                             <Button onClick={() => cancelBooking} variant="primary">Cancel Booking</Button>
 
@@ -80,4 +79,4 @@ const MyClasses = () => {
 
 
 
-export default MyClasses;
+export default  MyTrainers;
