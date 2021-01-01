@@ -44,7 +44,6 @@ const CurrentTrainers = () => {
 
 
 
-
     const handleChange = (event) => {
         console.log("f" + event.target.value);
         setFilter(event.target.value)

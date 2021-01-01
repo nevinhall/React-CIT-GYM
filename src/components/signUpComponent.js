@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Image, Col, Row, Button, Container, Form, Table } from 'react-bootstrap';
 import { Redirect, useHistory } from 'react-router-dom'
-
+import emailjs, { init } from 'emailjs-com';
 import '../css/form.css';
+
+init("user_QOYrUsBfsiSPdJCaB9l9W");
 
 
 
@@ -36,6 +38,21 @@ const SignUpComponent = () => {
 
         let path = '/login';
         history.push(path);
+
+        let templateParams = {
+            from_name: newUser.email,
+            to_name: newUser.email,
+            subject: "New member",
+            message_html: "message",
+        }
+
+
+        emailjs.send('service_ar1kanh', 'template_e574nry', templateParams)
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function (error) {
+                console.log('FAILED...', error);
+            });
     }
 
 

@@ -33,8 +33,6 @@ const SignUp = () => {
         console.log("t");
         console.log(user1);
 
-
-
         dispatch(signUp(user1))
     }
 

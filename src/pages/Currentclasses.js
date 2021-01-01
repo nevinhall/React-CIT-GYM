@@ -6,6 +6,7 @@ import '../css/index.css';
 
 import NavBar from '../components/NavBar'
 import Login from './Login';
+import Spinning from '../images/spiinong.jpg'
 
 
 
@@ -18,14 +19,14 @@ const CurrentClasses = () => {
 
     useEffect(() => {
         var currentClasses = JSON.parse(localStorage.getItem("classes"));
-        if (currentClasses == null) currentClasses = [
+         currentClasses = [
             {
                 clubName: "Rowing Club",
                 trainer: "John Doe",
                 typeOfActivity: "physical",
                 numCalories: "504",
                 operatingDate: "01/11/2020",
-                img: "",
+                img: 'rowing',
                 maxSize: "5",
                 durationOfClass: "60mins",
                 location: "Lake Blue",
@@ -37,7 +38,7 @@ const CurrentClasses = () => {
                 typeOfActivity: "spiritual",
                 numCalories: "200",
                 operatingDate: "21/11/2020",
-                img: "a",
+                img: 'arobics',
                 maxSize: "15",
                 durationOfClass: "30mins",
                 location: "Hall B",
@@ -49,7 +50,8 @@ const CurrentClasses = () => {
                 typeOfActivity: "physical",
                 numCalories: "1000",
                 operatingDate: "18/11/2020",
-                img: "",
+                img:'spinning',
+
                 maxSize: "5",
                 durationOfClass: "45mins",
                 location: "Hall A",
@@ -61,7 +63,7 @@ const CurrentClasses = () => {
                 typeOfActivity: "spiritual",
                 numCalories: "700",
                 operatingDate: "06/11/2020",
-                img: "",
+                img:'yoga',
                 maxSize: "20",
                 durationOfClass: "45mins",
                 location: "yogaPad",
